@@ -1,3 +1,7 @@
+/**
+ * GameControll class controls objects - it changes their states throughut the simulation
+ */
+
 package controller;
 
 import java.util.ArrayList;
@@ -20,6 +24,13 @@ public class GameControll {
 	}
 	
 	
+	/**
+	 * Method takes a string with instructions
+	 * and transforms it into array list for a later use
+	 * @param stringToTransform
+	 * @return array list
+	 */
+	
 	public ArrayList<Integer> stringToArray(String stringToTransform){
 		
 		ArrayList<Integer> path = new ArrayList<Integer>();
@@ -35,6 +46,13 @@ public class GameControll {
 	
 	
 	
+	/**
+	 * Method takes a command and through set of conditions
+	 * produces an output of a simulation.
+	 * Basically it updates the position of an agent on a game board.
+	 * Not my best work ;) 
+	 * @param command
+	 */
 	public void moveAgent(int command) {
 		String direction = agent.getDirection();
 		switch(command) {
@@ -115,7 +133,12 @@ public class GameControll {
 		}
 	}
 
-
+	/**
+	 * Method to validate the path.
+	 * It takes an array list with instructions and checks
+	 * if what is the final position of an agent.
+	 * @param path
+	 */
 	public void validatePath(ArrayList<Integer> path) {
 		int table_length = gameTable.showRows();
 		int table_height = gameTable.getGameTable().size();
